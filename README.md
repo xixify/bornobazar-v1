@@ -86,7 +86,7 @@ npx serve .
 ## 🌐 Live Deployment
 
 Published on GitHub Pages:
-**[https://xixify.github.io/bornobazar-minimal/](https://xixify.github.io/bornobazar-minimal/)**
+**[https://xixify.github.io/bornobazar-v1/](https://xixify.github.io/bornobazar-v1/)**
 
 ---
 
