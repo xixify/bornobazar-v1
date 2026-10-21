@@ -6,7 +6,7 @@
 (function () {
   'use strict';
 
-  const fmtPrice = (amount) => '৳' + Number(amount || 0).toLocaleString('bn-BD');
+  const fmtPrice = (amount) => '৳' + Number(amount || 0).toLocaleString('en-US');
   const escHtml = (str) => String(str || '').replace(/[&<>"']/g, m => ({
     '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#039;'
   }[m]));
@@ -16,12 +16,12 @@
   const BORNOBAZAR_REELS = [
     {
       id: 'reel_1',
-      title: 'আচার কিনতে কোনটা দেখেন? খাঁটি রসুনের আচার',
-      shortTitle: 'রসুন আচার স্পেশাল',
+      title: 'Artisanal Garlic Achar Cured in Pure Mustard Oil',
+      shortTitle: 'Garlic Achar Special',
       videoSrc: 'videos/reel_1.mp4',
       poster: 'videos/poster_1.jpg',
       productId: 'BB-ACH-012',
-      productName: 'রসুন আচার (স্পেশাল টুইস্ট)',
+      productName: 'Garlic Achar (Special Twist)',
       productThumb: 'All images/761355190_1034052569236062_78667506752820005_n.jpg',
       price: 240,
       regularPrice: 280,
@@ -29,12 +29,12 @@
     },
     {
       id: 'reel_2',
-      title: 'খাঁটি আচারের সুবাস ও স্বাদ — আলুবোখারা আচার',
-      shortTitle: 'আলুবোখারা আচার',
+      title: 'Royal Tang & Nostalgic Aroma — Alubokhara Achar',
+      shortTitle: 'Alubokhara Achar',
       videoSrc: 'videos/reel_2.mp4',
       poster: 'videos/poster_2.jpg',
       productId: 'BB-ACH-002',
-      productName: 'আলুবোখারা আচার',
+      productName: 'Royal Alubokhara Achar',
       productThumb: 'All images/779787836_1049495257691793_4108399455579486072_n.jpg',
       price: 240,
       regularPrice: 280,
@@ -42,12 +42,12 @@
     },
     {
       id: 'reel_3',
-      title: 'খাবারের টেবিলে ৩টি আচারের স্বাদ — নিউট্রি আচার কম্বো',
-      shortTitle: 'নিউট্রি আচার কম্বো',
+      title: 'Three Heritage Flavors — Nutri Immunity Achar Combo',
+      shortTitle: 'Nutri Achar Combo',
       videoSrc: 'videos/reel_3.mp4',
       poster: 'videos/poster_3.jpg',
       productId: 'BB-COM-006',
-      productName: 'নিউট্রি আচার কম্বো',
+      productName: 'Nutri Immunity Achar Combo',
       productThumb: 'All images/788601539_1056888763619109_5968941487902862885_n.jpg',
       price: 890,
       regularPrice: 1090,
@@ -55,12 +55,12 @@
     },
     {
       id: 'reel_4',
-      title: 'আচারের আসল মশলা ও ঝাঁজ — খাঁটি তেঁতুল আচার',
-      shortTitle: 'তেঁতুল আচার প্রিমিয়াম',
+      title: 'Authentic Village Spices & Zest — Pure Tamarind Achar',
+      shortTitle: 'Tamarind Achar',
       videoSrc: 'videos/reel_4.mp4',
       poster: 'videos/poster_4.jpg',
       productId: 'BB-ACH-016',
-      productName: 'তেঁতুল আচার (প্রিমিয়াম জার)',
+      productName: 'Tamarind Achar (Premium Jar)',
       productThumb: 'All images/813976083_1073010388673613_8899924605867364727_n.jpg',
       price: 380,
       regularPrice: 420,
@@ -68,12 +68,12 @@
     },
     {
       id: 'reel_5',
-      title: 'প্রতিদিন খাবারে আচারের তৃপ্তি — বরই আচার টক-মিষ্টি ক্রাশ',
-      shortTitle: 'বরই আচার ক্রাশ',
+      title: 'Everyday Dining Joy — Boro Achar Sweet & Sour Crush',
+      shortTitle: 'Boro Achar Crush',
       videoSrc: 'videos/reel_5.mp4',
       poster: 'videos/poster_5.jpg',
       productId: 'BB-ACH-018',
-      productName: 'বরই আচার (টক-মিষ্টি ক্রাশ)',
+      productName: 'Boro Achar (Sweet & Sour Crush)',
       productThumb: 'All images/807386813_1076326418342010_1423256031986250910_n.jpg',
       price: 380,
       regularPrice: 420,
@@ -81,12 +81,12 @@
     },
     {
       id: 'reel_6',
-      title: 'খাবারে যদি আচার না থাকে... রসুন কালোজিরা আচার',
-      shortTitle: 'রসুন কালোজিরা আচার',
+      title: 'Essential Companion — Garlic & Black Seed Achar',
+      shortTitle: 'Garlic & Black Seed',
       videoSrc: 'videos/reel_6.mp4',
       poster: 'videos/poster_6.jpg',
       productId: 'BB-ACH-025',
-      productName: 'রসুন কালোজিরা প্রিমিয়াম জার',
+      productName: 'Garlic & Black Seed Premium Achar',
       productThumb: 'All images/778279709_1047741551200497_8987538511452370084_n.jpg',
       price: 380,
       regularPrice: 450,
@@ -94,12 +94,12 @@
     },
     {
       id: 'reel_7',
-      title: 'ঘরোয়া আচারের আসল টেস্ট — তেঁতুল বরই মিক্স আচার',
-      shortTitle: 'তেঁতুল বরই মিক্স',
+      title: 'Authentic Village Taste — Tamarind & Boro Mix Achar',
+      shortTitle: 'Tamarind & Boro Mix',
       videoSrc: 'videos/reel_7.mp4',
       poster: 'videos/poster_7.jpg',
       productId: 'BB-ACH-008',
-      productName: 'তেঁতুল বরই মিক্স আচার',
+      productName: 'Tamarind & Boro Mix Achar',
       productThumb: 'All images/772204431_1039984018642917_4214701317489319558_n.jpg',
       price: 190,
       regularPrice: 220,
@@ -107,12 +107,12 @@
     },
     {
       id: 'reel_8',
-      title: 'বাজারের আচার বনাম খাঁটি বর্ণবাজার — ৬ প্যাক কম্বো গিফট বক্স',
-      shortTitle: '৬ প্যাক গিফট বক্স',
+      title: 'Commercial Achar vs Pure Bornobazar — 6-Pack Combo Gift Box',
+      shortTitle: '6-Pack Gift Box',
       videoSrc: 'videos/reel_8.mp4',
       poster: 'videos/poster_8.jpg',
       productId: 'BB-COM-001',
-      productName: '৬ প্যাক আচার কম্বো গিফট বক্স',
+      productName: '6-Pack Heritage Achar Gift Box',
       productThumb: 'All images/724500930_995387276435925_6032589404291467890_n.jpg',
       price: 1190,
       regularPrice: 1260,
@@ -179,19 +179,20 @@
       const prod = this.findProduct(productId);
       if (!prod) return;
 
-      const selWeight = weight || (prod.weights && prod.weights[0]) || 'স্ট্যান্ডার্ড';
+      const selWeight = weight || (prod.weights && prod.weights[0]) || 'Standard';
       const price = (prod.weight_pricing && prod.weight_pricing[selWeight])
         ? prod.weight_pricing[selWeight]
         : prod.sale_price;
 
+      const displayName = prod.name_en || prod.name_bn;
       const existing = this.cart.find(item => item.id === prod.id && item.weight === selWeight);
       if (existing) {
         existing.qty += qty;
       } else {
         this.cart.push({
           id: prod.id,
-          name_bn: prod.name_bn,
-          name_en: prod.name_en,
+          name_bn: displayName,
+          name_en: prod.name_en || displayName,
           image: prod.primary_image || 'Logo/bornobazar-logo.png',
           weight: selWeight,
           price: price,
@@ -200,7 +201,7 @@
       }
 
       this.saveCart();
-      this.showToast(`"${prod.name_bn}" কার্টে যোগ করা হয়েছে!`);
+      this.showToast(`"${displayName}" added to your bag!`);
       this.openCart();
     },
 
@@ -275,11 +276,11 @@
         const remaining = FREE_SHIPPING_THRESHOLD - subtotal;
         if (remaining <= 0) {
           freeShipFill.style.width = '100%';
-          freeShipText.innerHTML = '🎉 অভিনন্দন! আপনি <strong>ফ্রি হোম ডেলিভারি</strong> পাচ্ছেন!';
+          freeShipText.innerHTML = '🎉 Congratulations! You unlocked <strong>FREE NATIONWIDE DELIVERY</strong>!';
         } else {
           const pct = Math.min(100, Math.round((subtotal / FREE_SHIPPING_THRESHOLD) * 100));
           freeShipFill.style.width = pct + '%';
-          freeShipText.innerHTML = `আর মাত্র <strong>${fmtPrice(remaining)}</strong> টাকার অর্ডার করলেই <strong>ফ্রি ডেলিভারি</strong>!`;
+          freeShipText.innerHTML = `Add only <strong>${fmtPrice(remaining)}</strong> more to unlock <strong>FREE DELIVERY</strong>!`;
         }
       }
 
@@ -289,9 +290,9 @@
             <svg width="48" height="48" fill="none" viewBox="0 0 24 24" stroke="currentColor" style="margin: 0 auto 12px; color: var(--bb-text-light);">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z"/>
             </svg>
-            <div style="font-family: var(--font-display); font-size: 18px; text-transform: uppercase; color: var(--bb-forest); margin-bottom: 6px;">আপনার শপিং ব্যাগ খালি</div>
-            <p style="font-size: 14px; color: var(--bb-text-muted); font-family: var(--font-bn); margin-bottom: 20px;">আমাদের খাঁটি ছোট-ব্যাচের আচার ও ঘরোয়া খাদ্যসম্ভার দেখতে শপ ব্রাউজ করুন।</p>
-            <a href="shop.html" class="btn-pill btn-forest btn-sm" onclick="BornobazarMinimal.closeCart()">শপ ব্রাউজ করুন &rarr;</a>
+            <div style="font-family: var(--font-display); font-size: 18px; text-transform: uppercase; color: var(--bb-forest); margin-bottom: 6px;">Your Shopping Bag is Empty</div>
+            <p style="font-size: 14px; color: var(--bb-text-muted); font-family: var(--font-body); margin-bottom: 20px;">Explore our small-batch handcrafted Achar and pure artisanal pantry items.</p>
+            <a href="shop.html" class="btn-pill btn-forest btn-sm" onclick="BornobazarMinimal.closeCart()">Browse Achar &rarr;</a>
           </div>
         `;
         return;
@@ -311,7 +312,7 @@
           </div>
           <div class="bb-cart-item-price">
             <div>${fmtPrice(item.price * item.qty)}</div>
-            <button type="button" onclick="BornobazarMinimal.removeFromCart(${idx})" style="font-size: 11px; color: #DC2626; text-decoration: underline; margin-top: 6px; cursor: pointer;">মুছুন</button>
+            <button type="button" onclick="BornobazarMinimal.removeFromCart(${idx})" style="font-size: 11px; color: #DC2626; text-decoration: underline; margin-top: 6px; cursor: pointer;">Remove</button>
           </div>
         </div>
       `).join('');
@@ -336,28 +337,30 @@
     },
 
     renderProductCardHtml: function (p) {
-      const weights = p.weights || ['স্ট্যান্ডার্ড'];
+      const weights = p.weights || ['Standard'];
       const defaultWeight = weights[0];
       const price = (p.weight_pricing && p.weight_pricing[defaultWeight]) ? p.weight_pricing[defaultWeight] : p.sale_price;
       const regPrice = (p.regular_price && p.regular_price > price) ? p.regular_price : null;
-      const badge = p.category === 'স্পেশাল কম্বো' ? 'কম্বো অফার' : (p.on_sale ? 'ছোট ব্যাচ' : 'খাঁটি সরিষার তেল');
+      const badge = p.category === 'স্পেশাল কম্বো' ? 'Combo Set' : (p.on_sale ? 'Small Batch' : 'Pure Mustard Oil');
+      const displayName = p.name_en || p.name_bn;
+      const displayCategory = p.category === 'স্পেশাল কম্বো' ? 'Special Combo' : (p.category === 'শুটকি ভর্তা' ? 'Dry Fish Bhorta' : 'Artisanal Achar');
 
       return `
         <div class="bb-product-card" data-id="${p.id}" data-selected-weight="${defaultWeight}">
           <div class="bb-card-media">
             <span class="bb-card-badge">${badge}</span>
             <a href="product.html?id=${p.id}" style="display: contents;">
-              <img src="${p.primary_image || 'Logo/bornobazar-logo.png'}" alt="${escHtml(p.name_bn)}" loading="lazy">
+              <img src="${p.primary_image || 'Logo/bornobazar-logo.png'}" alt="${escHtml(displayName)}" loading="lazy">
             </a>
           </div>
           <div class="bb-card-content">
-            <div class="bb-card-cat">${escHtml(p.category)}</div>
+            <div class="bb-card-cat">${escHtml(displayCategory)}</div>
             <a href="product.html?id=${p.id}">
-              <h3 class="bb-card-title">${escHtml(p.name_bn)}</h3>
+              <h3 class="bb-card-title">${escHtml(displayName)}</h3>
             </a>
             <div class="bb-card-rating">
               <svg width="13" height="13" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
-              <span>4.9 (৩৬ রিভিউ)</span>
+              <span>4.9 (36 Reviews)</span>
             </div>
             
             ${weights.length > 1 ? `
@@ -377,9 +380,9 @@
                 <span class="bb-card-price" id="card-price-${p.id}">${fmtPrice(price)}</span>
                 ${regPrice ? `<span class="bb-card-regular-price">${fmtPrice(regPrice)}</span>` : ''}
               </div>
-              <button type="button" class="bb-card-quick-add" onclick="BornobazarMinimal.handleCardQuickAdd('${p.id}', this)">
+              <button type="button" class="bb-card-quick-add" onclick="BornobazarMinimal.handleCardQuickAdd('${p.id}', this)" aria-label="Add ${escHtml(displayName)} to Bag">
                 <svg width="14" height="14" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M12 4v16m8-8H4"/></svg>
-                <span>কার্ট</span>
+                <span>Add</span>
               </button>
             </div>
           </div>
@@ -424,9 +427,20 @@
             tabs.forEach(t => t.classList.remove('active'));
             tab.classList.add('active');
             const cat = tab.getAttribute('data-cat');
-            const filtered = (cat === 'all')
-              ? this.products.slice(0, 8)
-              : this.products.filter(p => p.category === cat).slice(0, 8);
+            let filtered;
+            if (cat === 'all') {
+              filtered = this.products.slice(0, 8);
+            } else if (cat === 'আচার' || cat === 'Achar') {
+              filtered = this.products.filter(p => p.category === 'আচার' || p.category === 'Achar').slice(0, 8);
+            } else if (cat === 'স্পেশাল কম্বো' || cat === 'Special Combo') {
+              filtered = this.products.filter(p => p.category === 'স্পেশাল কম্বো' || p.category === 'Special Combo').slice(0, 8);
+            } else if (cat === 'শুটকি ভর্তা' || cat === 'Dry Fish Bhorta') {
+              filtered = this.products.filter(p => p.category === 'শুটকি ভর্তা' || p.category === 'Dry Fish Bhorta').slice(0, 8);
+            } else if (cat === 'ঘি ও তেল' || cat === 'Ghee & Oil') {
+              filtered = this.products.filter(p => p.category === 'ঘি ও তেল' || p.category === 'Ghee & Oil').slice(0, 8);
+            } else {
+              filtered = this.products.filter(p => p.category === cat).slice(0, 8);
+            }
             container.innerHTML = filtered.map(p => this.renderProductCardHtml(p)).join('');
           });
         });
@@ -437,19 +451,61 @@
         this.renderReelsSection('home-reels-section');
       }
 
-      // Hero slides animation if present
+      // Initialize Desktop Background Slider
+      this.initHeroSlider();
+    },
+
+    initHeroSlider: function () {
       const slides = document.querySelectorAll('.bb-hero-slide');
       const dots = document.querySelectorAll('.bb-hero-dot');
-      if (slides.length > 1) {
-        let currentSlide = 0;
-        setInterval(() => {
-          slides[currentSlide].classList.remove('active');
-          if (dots[currentSlide]) dots[currentSlide].classList.remove('active');
-          currentSlide = (currentSlide + 1) % slides.length;
-          slides[currentSlide].classList.add('active');
-          if (dots[currentSlide]) dots[currentSlide].classList.add('active');
-        }, 5000);
+      const slider = document.getElementById('hero-slider');
+      if (!slides.length) return;
+
+      let currentIndex = 0;
+      let intervalId = null;
+
+      const goToSlide = (idx) => {
+        if (idx < 0) idx = slides.length - 1;
+        if (idx >= slides.length) idx = 0;
+        currentIndex = idx;
+
+        slides.forEach((s, i) => s.classList.toggle('active', i === currentIndex));
+        dots.forEach((d, i) => {
+          d.classList.toggle('active', i === currentIndex);
+          d.setAttribute('aria-current', i === currentIndex ? 'true' : 'false');
+        });
+      };
+
+      dots.forEach((dot, idx) => {
+        dot.addEventListener('click', () => {
+          goToSlide(idx);
+          restartTimer();
+        });
+      });
+
+      const startTimer = () => {
+        if (slides.length <= 1) return;
+        intervalId = setInterval(() => goToSlide(currentIndex + 1), 5000);
+      };
+
+      const stopTimer = () => {
+        if (intervalId) {
+          clearInterval(intervalId);
+          intervalId = null;
+        }
+      };
+
+      const restartTimer = () => {
+        stopTimer();
+        startTimer();
+      };
+
+      if (slider) {
+        slider.addEventListener('mouseenter', stopTimer);
+        slider.addEventListener('mouseleave', startTimer);
       }
+
+      startTimer();
     },
 
     /* ==========================================================================
@@ -466,9 +522,9 @@
           <div class="bb-reel-overlay"></div>
           <div class="bb-reel-tag">
             <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor"><polygon points="5 3 19 12 5 21 5 3"/></svg>
-            <span>ভিডিও রিভিউ</span>
+            <span>VIDEO REVIEW</span>
           </div>
-          <button type="button" class="bb-reel-play-btn" aria-label="ভিডিও চালান" onclick="BornobazarMinimal.openReelModal(${idx}); event.stopPropagation();">
+          <button type="button" class="bb-reel-play-btn" aria-label="Play video" onclick="BornobazarMinimal.openReelModal(${idx}); event.stopPropagation();">
             <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor">
               <polygon points="8 5 19 12 8 19 8 5"/>
             </svg>
@@ -480,14 +536,14 @@
                 <div class="bb-reel-product-title" title="${escHtml(r.productName)}">${escHtml(r.shortTitle || r.productName)}</div>
                 <div class="bb-reel-product-price">${fmtPrice(r.price)} ${r.regularPrice > r.price ? `<s style="font-size: 11px; color: var(--bb-text-light);">${fmtPrice(r.regularPrice)}</s>` : ''}</div>
               </div>
-              <a href="product.html?id=${r.productId}" class="bb-reel-ext-btn" title="বিস্তারিত দেখুন">
+              <a href="product.html?id=${r.productId}" class="bb-reel-ext-btn" title="View Details">
                 <svg width="15" height="15" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/></svg>
               </a>
             </div>
             <div class="bb-reel-btn-row">
               <button type="button" class="bb-reel-add-cart-btn" onclick="BornobazarMinimal.addToCart('${r.productId}', '${r.weight}', 1)">
                 <svg width="14" height="14" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z"/></svg>
-                <span>কার্ট</span>
+                <span>Add</span>
               </button>
             </div>
           </div>
@@ -500,14 +556,14 @@
             <div>
               <span class="bb-reels-badge">
                 <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polygon points="10 8 16 12 10 16 10 8" fill="currentColor"/></svg>
-                WATCH &amp; SHOP &bull; খাঁটি আচারের ভিডিও
+                WATCH &amp; SHOP &bull; REAL ACHAR IN MOTION
               </span>
-              <h2 class="h2 bb-reels-title">ভিডিওতে দেখুন আমাদের ঐতিহ্য ও কাস্টমার রিভিউ</h2>
-              <p class="bb-reels-subtitle">সরাসরি বয়াম খুলে স্বাদ ও উপাদানের খাঁটি অনুভূতি দেখে অর্ডার করুন</p>
+              <h2 class="h2 bb-reels-title">WATCH RAW TEXTURES &amp; VERIFIED CUSTOMER REVIEWS</h2>
+              <p class="bb-reels-subtitle">See the golden mustard oil sizzle and hear the real crunch before ordering</p>
             </div>
             <div style="display: flex; gap: 8px;">
-              <button type="button" class="bb-reels-nav-btn" onclick="document.getElementById('${carouselId}').scrollBy({left: -270, behavior: 'smooth'})" aria-label="পূর্ববর্তী">&larr;</button>
-              <button type="button" class="bb-reels-nav-btn" onclick="document.getElementById('${carouselId}').scrollBy({left: 270, behavior: 'smooth'})" aria-label="পরবর্তী">&rarr;</button>
+              <button type="button" class="bb-reels-nav-btn" onclick="document.getElementById('${carouselId}').scrollBy({left: -270, behavior: 'smooth'})" aria-label="Previous">&larr;</button>
+              <button type="button" class="bb-reels-nav-btn" onclick="document.getElementById('${carouselId}').scrollBy({left: 270, behavior: 'smooth'})" aria-label="Next">&rarr;</button>
             </div>
           </div>
           <div class="bb-reels-carousel" id="${carouselId}">
@@ -551,7 +607,7 @@
           <div class="bb-reel-modal-p-info">
             <img src="${r.productThumb}" alt="${escHtml(r.productName)}" class="bb-reel-modal-p-img">
             <div>
-              <div style="font-family: var(--font-bn); font-weight: 700; font-size: 14px; color: var(--bb-forest); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; max-width: 170px;">
+              <div style="font-family: var(--font-display); font-weight: 700; font-size: 15px; color: var(--bb-forest); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; max-width: 170px;">
                 ${escHtml(r.productName)}
               </div>
               <div style="font-family: var(--font-display); font-size: 15px; color: var(--bb-forest);">
@@ -561,7 +617,7 @@
           </div>
           <div style="display: flex; gap: 8px;">
             <button type="button" class="btn-pill btn-lime btn-sm" onclick="BornobazarMinimal.addToCart('${r.productId}', '${r.weight}', 1)">
-              অর্ডার করুন
+              Order Now
             </button>
           </div>
         `;
@@ -646,24 +702,34 @@
         let list = this.products;
 
         if (activeCat && activeCat !== 'all') {
-          list = list.filter(p => p.category === activeCat);
+          if (activeCat === 'Achar' || activeCat === 'আচার') {
+            list = list.filter(p => p.category === 'আচার' || p.category === 'Achar');
+          } else if (activeCat === 'Special Combo' || activeCat === 'স্পেশাল কম্বো') {
+            list = list.filter(p => p.category === 'স্পেশাল কম্বো' || p.category === 'Special Combo');
+          } else if (activeCat === 'Dry Fish Bhorta' || activeCat === 'শুটকি ভর্তা') {
+            list = list.filter(p => p.category === 'শুটকি ভর্তা' || p.category === 'Dry Fish Bhorta');
+          } else if (activeCat === 'Ghee & Oil' || activeCat === 'ঘি ও তেল') {
+            list = list.filter(p => p.category === 'ঘি ও তেল' || p.category === 'Ghee & Oil');
+          } else {
+            list = list.filter(p => p.category === activeCat);
+          }
         }
 
         if (query) {
           list = list.filter(p => 
-            p.name_bn.toLowerCase().includes(query) ||
             (p.name_en && p.name_en.toLowerCase().includes(query)) ||
+            p.name_bn.toLowerCase().includes(query) ||
             (p.description && p.description.toLowerCase().includes(query))
           );
         }
 
-        if (countEl) countEl.textContent = `${list.length}টি পণ্য`;
+        if (countEl) countEl.textContent = `${list.length} Products`;
 
         if (list.length === 0) {
           container.innerHTML = `
             <div style="grid-column: 1 / -1; text-align: center; padding: 60px 20px;">
-              <h3 style="font-size: 20px; margin-bottom: 8px;">কোনো পণ্য খুঁজে পাওয়া যায়নি</h3>
-              <p style="color: var(--bb-text-muted); font-family: var(--font-bn);">অন্য কিওয়ার্ড দিয়ে সার্চ করুন অথবা সকল পণ্য ব্রাউজ করুন।</p>
+              <h3 style="font-size: 20px; margin-bottom: 8px;">No Products Found</h3>
+              <p style="color: var(--bb-text-muted); font-family: var(--font-body);">Try searching with another keyword or explore our complete catalog.</p>
             </div>
           `;
           return;
@@ -688,13 +754,14 @@
       const p = this.findProduct(queryId);
       if (!p) return;
 
-      document.title = p.name_bn + ' — বর্ণবাজার (Bornobazar)';
+      const displayName = p.name_en || p.name_bn;
+      document.title = displayName + ' — Bornobazar';
 
       let selVariantIndex = 0;
       let qty = 1;
       let bundleMode = 'single'; // single, duo, trio
 
-      const variants = (p.weights || ['স্ট্যান্ডার্ড']).map(w => {
+      const variants = (p.weights || ['Standard']).map(w => {
         const price = (p.weight_pricing && p.weight_pricing[w]) ? p.weight_pricing[w] : p.sale_price;
         const reg = (p.regular_price > price) ? p.regular_price : price;
         return { w, price, reg };
@@ -709,7 +776,7 @@
       if (thumbsBox && images.length > 1) {
         thumbsBox.innerHTML = images.map((src, i) => `
           <button type="button" class="bb-pdp-thumb-btn ${i === 0 ? 'active' : ''}" onclick="BornobazarMinimal.switchPdpImage('${src}', this)">
-            <img src="${src}" alt="${escHtml(p.name_bn)} ${i+1}">
+            <img src="${src}" alt="${escHtml(displayName)} ${i+1}">
           </button>
         `).join('');
       }
@@ -718,8 +785,9 @@
       const titleEl = document.getElementById('pdp-title');
       const catEl = document.getElementById('pdp-cat');
       const descEl = document.getElementById('pdp-desc');
-      if (titleEl) titleEl.textContent = p.name_bn;
-      if (catEl) catEl.textContent = p.category;
+      const displayCategory = p.category === 'স্পেশাল কম্বো' ? 'Special Combo' : (p.category === 'শুটকি ভর্তা' ? 'Dry Fish Bhorta' : 'Artisanal Achar');
+      if (titleEl) titleEl.textContent = displayName;
+      if (catEl) catEl.textContent = displayCategory;
       if (descEl) descEl.textContent = p.description;
 
       // Weight Selector Pills
@@ -727,7 +795,7 @@
       if (weightChips) {
         weightChips.innerHTML = variants.map((v, i) => `
           <button type="button" class="btn-pill btn-outline btn-sm ${i === 0 ? 'active' : ''}" 
-            style="border-radius: var(--radius-pill); font-family: var(--font-bn); ${i === 0 ? 'background: var(--bb-forest); color: #fff;' : ''}"
+            style="border-radius: var(--radius-pill); font-family: var(--font-body); ${i === 0 ? 'background: var(--bb-forest); color: #fff;' : ''}"
             onclick="BornobazarMinimal.setPdpVariant(${i})">
             ${escHtml(v.w)}
           </button>
@@ -741,10 +809,10 @@
 
         if (bundleMode === 'duo') {
           finalPrice = Math.round(v.price * 2 * 0.9); // 10% off
-          discountNote = ' (১০% সেভার ছাড়)';
+          discountNote = ' (10% Saver Discount)';
         } else if (bundleMode === 'trio') {
           finalPrice = Math.round(v.price * 3 * 0.85); // 15% off
-          discountNote = ' (১৫% মেগা সেভার ছাড়)';
+          discountNote = ' (15% Mega Saver Discount)';
         }
 
         const priceEl = document.getElementById('pdp-price');
@@ -757,7 +825,7 @@
         const stickyWeight = document.getElementById('sticky-bar-weight');
 
         if (stickyImg) stickyImg.src = p.primary_image || 'Logo/bornobazar-logo.png';
-        if (stickyTitle) stickyTitle.textContent = p.name_bn;
+        if (stickyTitle) stickyTitle.textContent = displayName;
         if (stickyPrice) stickyPrice.textContent = fmtPrice(finalPrice);
         if (stickyWeight) stickyWeight.textContent = v.w;
       };
@@ -838,9 +906,9 @@
       if (this.cart.length === 0) {
         container.innerHTML = `
           <div style="text-align: center; padding: 80px 20px;">
-            <h1 class="h2" style="margin-bottom: 12px;">আপনার ব্যাগ বর্তমানে খালি</h1>
-            <p style="color: var(--bb-text-muted); font-family: var(--font-bn); margin-bottom: 24px;">আমাদের খাঁটি ঐতিহ্যবাহী খাদ্যসম্ভার অর্ডার করতে শপ ভিজিট করুন।</p>
-            <a href="shop.html" class="btn-pill btn-forest">শপিং করুন &rarr;</a>
+            <h1 class="h2" style="margin-bottom: 12px;">Your Shopping Bag is Empty</h1>
+            <p style="color: var(--bb-text-muted); font-family: var(--font-body); margin-bottom: 24px;">Explore our authentic artisanal Achar &amp; handcrafted pantry items.</p>
+            <a href="shop.html" class="btn-pill btn-forest">Shop Achar &rarr;</a>
           </div>
         `;
         return;
@@ -851,13 +919,13 @@
       container.innerHTML = `
         <div style="display: grid; grid-template-columns: 2fr 1fr; gap: 36px;" class="bb-cart-page-grid">
           <div style="background: #FFFFFF; border: 1px solid var(--bb-border); border-radius: var(--radius-card); padding: 24px;">
-            <h2 class="h3" style="margin-bottom: 20px; border-bottom: 1px solid var(--bb-border); padding-bottom: 14px;">ব্যাগ আইটেমসমূহ (${this.getCartItemCount()})</h2>
+            <h2 class="h3" style="margin-bottom: 20px; border-bottom: 1px solid var(--bb-border); padding-bottom: 14px;">Bag Items (${this.getCartItemCount()})</h2>
             <div style="display: flex; flex-direction: column; gap: 18px;">
               ${this.cart.map((item, idx) => `
                 <div style="display: grid; grid-template-columns: 80px 1fr auto; gap: 16px; align-items: center; padding-bottom: 16px; border-bottom: 1px solid var(--bb-border);">
                   <img src="${item.image}" alt="${escHtml(item.name_bn)}" style="width: 80px; height: 80px; object-fit: contain; border-radius: var(--radius-md); background: var(--bb-surface-muted); border: 1px solid var(--bb-border);">
                   <div>
-                    <a href="product.html?id=${item.id}" style="font-family: var(--font-bn); font-weight: 700; font-size: 16px; color: var(--bb-forest);">${escHtml(item.name_bn)}</a>
+                    <a href="product.html?id=${item.id}" style="font-family: var(--font-display); font-weight: 700; font-size: 16px; color: var(--bb-forest);">${escHtml(item.name_bn)}</a>
                     <div style="font-size: 13px; color: var(--bb-text-muted); margin: 2px 0 8px;">${escHtml(item.weight)}</div>
                     <div class="bb-cart-qty-ctrl">
                       <button type="button" class="bb-cart-qty-btn" onclick="BornobazarMinimal.updateCartQty(${idx}, -1)">&minus;</button>
@@ -867,7 +935,7 @@
                   </div>
                   <div style="text-align: right;">
                     <div style="font-family: var(--font-display); font-size: 20px; color: var(--bb-forest);">${fmtPrice(item.price * item.qty)}</div>
-                    <button type="button" onclick="BornobazarMinimal.removeFromCart(${idx})" style="font-size: 12px; color: #DC2626; text-decoration: underline; margin-top: 8px; cursor: pointer;">মুছুন</button>
+                    <button type="button" onclick="BornobazarMinimal.removeFromCart(${idx})" style="font-size: 12px; color: #DC2626; text-decoration: underline; margin-top: 8px; cursor: pointer;">Remove</button>
                   </div>
                 </div>
               `).join('')}
@@ -875,17 +943,17 @@
           </div>
 
           <div style="background: #FFFFFF; border: 1px solid var(--bb-border); border-radius: var(--radius-card); padding: 24px; height: fit-content;">
-            <h3 class="h4" style="margin-bottom: 16px; border-bottom: 1px solid var(--bb-border); padding-bottom: 12px;">অর্ডার সামারি</h3>
+            <h3 class="h4" style="margin-bottom: 16px; border-bottom: 1px solid var(--bb-border); padding-bottom: 12px;">Order Summary</h3>
             <div style="display: flex; justify-content: space-between; margin-bottom: 12px; font-size: 15px;">
-              <span style="color: var(--bb-text-muted);">সাবটোটাল</span>
+              <span style="color: var(--bb-text-muted);">Subtotal</span>
               <span style="font-family: var(--font-display); font-size: 18px; color: var(--bb-forest);">${fmtPrice(subtotal)}</span>
             </div>
             <div style="display: flex; justify-content: space-between; margin-bottom: 18px; font-size: 15px;">
-              <span style="color: var(--bb-text-muted);">ডেলিভারি চার্জ</span>
-              <span style="color: var(--bb-text-muted);">চেকআউট পেজে নির্ধারিত হবে</span>
+              <span style="color: var(--bb-text-muted);">Delivery Fee</span>
+              <span style="color: var(--bb-text-muted);">Calculated at Checkout</span>
             </div>
-            <a href="checkout.html" class="btn-pill btn-lime btn-full" style="text-align: center; margin-bottom: 12px;">চেকআউট করুন &rarr;</a>
-            <a href="shop.html" class="btn-pill btn-outline btn-full" style="text-align: center;">আরও পণ্য যোগ করুন</a>
+            <a href="checkout.html" class="btn-pill btn-lime btn-full" style="text-align: center; margin-bottom: 12px;">Proceed to Checkout &rarr;</a>
+            <a href="shop.html" class="btn-pill btn-outline btn-full" style="text-align: center;">Continue Shopping</a>
           </div>
         </div>
       `;
@@ -901,7 +969,7 @@
       const totalEl = document.getElementById('summary-total');
 
       if (this.cart.length === 0) {
-        alert('আপনার ব্যাগ খালি! শপিং শুরু করতে শপ ভিজিট করুন।');
+        alert('Your shopping bag is empty! Please visit our shop to select items.');
         window.location.href = 'shop.html';
         return;
       }
@@ -920,7 +988,7 @@
         summaryEl.innerHTML = this.cart.map(item => `
           <div style="display: flex; justify-content: space-between; align-items: center; padding: 10px 0; border-bottom: 1px solid var(--bb-border);">
             <div>
-              <div style="font-family: var(--font-bn); font-weight: 700; color: var(--bb-forest);">${escHtml(item.name_bn)}</div>
+              <div style="font-family: var(--font-display); font-weight: 700; color: var(--bb-forest);">${escHtml(item.name_bn)}</div>
               <div style="font-size: 13px; color: var(--bb-text-muted);">${escHtml(item.weight)} &times; ${item.qty}</div>
             </div>
             <div style="font-family: var(--font-display); font-size: 16px; color: var(--bb-forest);">${fmtPrice(item.price * item.qty)}</div>
@@ -947,8 +1015,8 @@
             items: this.cart,
             subtotal: this.getCartSubtotal(),
             shipping: (this.deliveryArea === 'inside_dhaka') ? 70 : 130,
-            date: new Date().toLocaleDateString('bn-BD'),
-            customerName: document.getElementById('cust_name')?.value || 'গ্রাহক',
+            date: new Date().toLocaleDateString('en-US'),
+            customerName: document.getElementById('cust_name')?.value || 'Customer',
             phone: document.getElementById('cust_phone')?.value || '',
             address: document.getElementById('cust_address')?.value || ''
           };
@@ -977,12 +1045,12 @@
             <div style="width: 60px; height: 60px; border-radius: 50%; background: var(--bb-lime); color: var(--bb-forest); display: inline-flex; align-items: center; justify-content: center; margin-bottom: 20px;">
               <svg width="32" height="32" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>
             </div>
-            <h1 class="h2" style="margin-bottom: 8px;">অর্ডার সফল হয়েছে!</h1>
-            <p style="font-family: var(--font-bn); color: var(--bb-text-muted); font-size: 16px; margin-bottom: 24px;">ধন্যবাদ! আপনার অর্ডারটি আমরা গ্রহণ করেছি। খুব শীঘ্রই আমাদের কাস্টমার প্রতিনিধি আপনার সাথে যোগাযোগ করবেন।</p>
+            <h1 class="h2" style="margin-bottom: 8px;">Order Confirmed!</h1>
+            <p style="font-family: var(--font-body); color: var(--bb-text-muted); font-size: 16px; margin-bottom: 24px;">Thank you! We have received your order. Our customer care representative will contact you shortly to confirm delivery details.</p>
             <div style="background: var(--bb-surface-muted); padding: 16px; border-radius: var(--radius-md); font-family: var(--font-display); font-size: 16px; margin-bottom: 28px;">
-              অর্ডার নম্বর: <span style="color: var(--bb-forest);">${id}</span>
+              Order Reference: <span style="color: var(--bb-forest);">${id}</span>
             </div>
-            <a href="index.html" class="btn-pill btn-forest">হোমে ফিরে যান</a>
+            <a href="index.html" class="btn-pill btn-forest">Back to Home &rarr;</a>
           </div>
         `;
       } catch (e) {}

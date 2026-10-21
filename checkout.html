@@ -1,10 +1,10 @@
 <!DOCTYPE html>
-<html lang="bn-BD">
+<html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-  <title>দ্রুত চেকআউট — BORNOBAZAR (বর্ণবাজার) Minimal</title>
-  <meta name="description" content="নিরাপদ ও সহজ চেকআউট। ক্যাশ অন ডেলিভারি ও মোবাইল ব্যাংকিং সুবিধা।">
+  <title>Express Checkout — BORNOBAZAR Minimal</title>
+  <meta name="description" content="Secure and seamless checkout with cash on delivery across all 64 districts of Bangladesh.">
   <link rel="icon" href="Logo/bornobazar-logo.png" type="image/png">
   <link rel="stylesheet" href="css/minimal.css?v=1.0">
   <style>
@@ -19,7 +19,6 @@
     }
     .bb-form-label {
       display: block;
-      font-family: var(--font-bn);
       font-size: 14px;
       font-weight: 600;
       color: var(--bb-forest);
@@ -30,7 +29,6 @@
       padding: 12px 14px;
       border: 1px solid var(--bb-border);
       border-radius: var(--radius-sm);
-      font-family: var(--font-bn);
       font-size: 14px;
       outline: none;
       transition: border-color 0.2s ease;
@@ -71,9 +69,9 @@
   <!-- Top Announcement Bar -->
   <div class="bb-announcement">
     <div class="bb-container bb-announcement-inner">
-      <span><span class="bb-announcement-badge">FRESH BATCH</span> মেহেরপুরের ঐতিহ্যবাহী রেসিপিতে রোদে শুকানো খাঁটি ঘরোয়া খাদ্যসম্ভার</span>
+      <span><span class="bb-announcement-badge">FRESH BATCH</span> Handcrafted sun-cured traditional Bengal gourmet from Meherpur</span>
       <span>&bull;</span>
-      <span>৬৪ জেলায় দ্রুত ক্যাশ অন ডেলিভারি</span>
+      <span>Express Nationwide Cash on Delivery Across 64 Districts</span>
     </div>
   </div>
 
@@ -81,20 +79,20 @@
   <header class="bb-header">
     <div class="bb-container bb-header-inner">
       <div class="bb-header-left">
-        <a href="shop.html" class="bb-nav-link">&larr; শপে ফিরে যান</a>
+        <a href="shop.html" class="bb-nav-link">&larr; Return to Shop</a>
       </div>
       <div class="bb-brand-center">
-        <a href="index.html" class="bb-brand-logo" aria-label="বর্ণবাজার হোমপেজ">
-          <img src="Logo/bornobazar-logo.png" alt="বর্ণবাজার লোগো">
+        <a href="index.html" class="bb-brand-logo" aria-label="Bornobazar Homepage">
+          <img src="Logo/bornobazar-logo.png" alt="Bornobazar Logo">
           <div class="bb-brand-wordmark">
             BORNOBAZAR
-            <span>স্বাদ ও মানে অনন্য!</span>
+            <span>TASTE &amp; PURITY UNMATCHED</span>
           </div>
         </a>
       </div>
       <div class="bb-header-right">
         <span style="font-family: var(--font-display); font-size: 13px; color: var(--bb-forest); text-transform: uppercase;">
-          নিরাপদ চেকআউট
+          SECURE CHECKOUT
         </span>
       </div>
     </div>
@@ -102,69 +100,69 @@
 
   <!-- Checkout Main Form -->
   <main class="bb-container" style="padding: 40px 24px 80px;">
-    <h1 class="h2" style="margin-bottom: 24px; text-align: center;">অর্ডার সম্পন্ন করুন</h1>
+    <h1 class="h2" style="margin-bottom: 24px; text-align: center;">COMPLETE YOUR ORDER</h1>
 
     <div class="bb-checkout-grid">
       
       <!-- Left: Delivery Information Form -->
       <div style="background: #FFFFFF; border: 1px solid var(--bb-border); border-radius: var(--radius-card); padding: 28px;">
         <h2 class="h4" style="margin-bottom: 20px; border-bottom: 1px solid var(--bb-border); padding-bottom: 12px;">
-          ১. ডেলিভারির তথ্য
+          1. Delivery Information
         </h2>
 
         <form id="checkout-form">
           <div class="bb-form-group">
-            <label class="bb-form-label" for="cust_name">আপনার নাম *</label>
-            <input type="text" id="cust_name" class="bb-input" placeholder="আপনার পুরো নাম লিখুন" required>
+            <label class="bb-form-label" for="cust_name">Full Name *</label>
+            <input type="text" id="cust_name" class="bb-input" placeholder="Enter your full name" required>
           </div>
 
           <div class="bb-form-group">
-            <label class="bb-form-label" for="cust_phone">মোবাইল নম্বর * (১১ ডিজিট)</label>
+            <label class="bb-form-label" for="cust_phone">Mobile Number * (11 Digits)</label>
             <input type="tel" id="cust_phone" class="bb-input" placeholder="017XXXXXXXX" pattern="01[3-9][0-9]{8}" required>
           </div>
 
           <div class="bb-form-group">
-            <label class="bb-form-label" for="cust_address">সম্পূর্ণ ডেলিভারি ঠিকানা *</label>
-            <textarea id="cust_address" class="bb-input" rows="3" placeholder="বাড়ি নং, রোড নং, এলাকা, থানা ও জেলা উল্লেখ করুন" required style="resize: vertical;"></textarea>
+            <label class="bb-form-label" for="cust_address">Complete Delivery Address *</label>
+            <textarea id="cust_address" class="bb-input" rows="3" placeholder="House / Flat No, Road / Area, Thana and District" required style="resize: vertical;"></textarea>
           </div>
 
           <h3 class="h4" style="margin: 24px 0 14px; border-top: 1px solid var(--bb-border); padding-top: 20px;">
-            ২. ডেলিভারি এলাকা
+            2. Delivery Zone
           </h3>
 
           <label class="bb-radio-card">
             <input type="radio" name="delivery_zone" id="ship_inside" value="inside" checked>
             <div style="flex: 1;">
-              <div style="font-family: var(--font-bn); font-weight: 700; color: var(--bb-forest);">ঢাকা সিটির ভিতরে (হোম ডেলিভারি)</div>
-              <div style="font-size: 13px; color: var(--bb-text-muted);">২৪-৪৮ ঘণ্টার মধ্যে পৌঁছে যাবে</div>
+              <div style="font-weight: 700; color: var(--bb-forest);">Inside Dhaka City (Doorstep Delivery)</div>
+              <div style="font-size: 13px; color: var(--bb-text-muted);">Delivered within 24–48 hours</div>
             </div>
-            <div style="font-family: var(--font-display); font-size: 17px; color: var(--bb-forest);">৳৭০</div>
+            <div style="font-family: var(--font-display); font-size: 17px; color: var(--bb-forest);">৳70</div>
           </label>
 
           <label class="bb-radio-card">
             <input type="radio" name="delivery_zone" id="ship_outside" value="outside">
             <div style="flex: 1;">
-              <div style="font-family: var(--font-bn); font-weight: 700; color: var(--bb-forest);">ঢাকা সিটির বাইরে (সারা বাংলাদেশ)</div>
-              <div style="font-size: 13px; color: var(--bb-text-muted);">২-৪ কার্যদিবসের মধ্যে কুরিয়ারে ডেলিভারি</div>
+              <div style="font-weight: 700; color: var(--bb-forest);">Outside Dhaka City (All 64 Districts)</div>
+              <div style="font-size: 13px; color: var(--bb-text-muted);">Delivered within 2–4 business days via courier</div>
             </div>
-            <div style="font-family: var(--font-display); font-size: 17px; color: var(--bb-forest);">৳১৩০</div>
+            <div style="font-family: var(--font-display); font-size: 17px; color: var(--bb-forest);">৳130</div>
           </label>
 
           <h3 class="h4" style="margin: 24px 0 14px; border-top: 1px solid var(--bb-border); padding-top: 20px;">
-            ৩. পেমেন্ট পদ্ধতি
+            3. Payment Method
           </h3>
 
           <div style="background: var(--bb-lime-soft); border: 1px solid var(--bb-border); border-radius: var(--radius-sm); padding: 16px; margin-bottom: 24px;">
-            <div style="font-family: var(--font-bn); font-weight: 700; color: var(--bb-forest); margin-bottom: 4px;">
-              ✓ ক্যাশ অন ডেলিভারি (পণ্য হাতে পেয়ে মূল্য পরিশোধ)
+            <div style="font-weight: 700; color: var(--bb-forest); margin-bottom: 4px;">
+              ✓ Doorstep Cash on Delivery (Pay after inspecting your parcel)
             </div>
-            <p style="font-family: var(--font-bn); font-size: 13px; color: var(--bb-text-muted); line-height: 1.5; margin: 0;">
-              বিকাশ/নগদে অগ্রিম পরিশোধ করতে চাইলে অর্ডার কনফার্মেশনের পর আমাদের প্রতিনিধি প্রদত্ত নম্বরে সেন্ড মানি করতে পারবেন।
+            <p style="font-size: 13px; color: var(--bb-text-muted); line-height: 1.5; margin: 0;">
+              To pay in advance via bKash or Nagad, you can send money to the official merchant number provided after order confirmation.
             </p>
           </div>
 
           <button type="submit" class="btn-pill btn-lime btn-lg btn-full" style="justify-content: center; font-size: 16px; padding: 16px;">
-            অর্ডার নিশ্চিত করুন &rarr;
+            Confirm Order Now &rarr;
           </button>
         </form>
       </div>
@@ -172,7 +170,7 @@
       <!-- Right: Order Summary -->
       <div style="background: #FFFFFF; border: 1px solid var(--bb-border); border-radius: var(--radius-card); padding: 28px; position: sticky; top: 96px;">
         <h2 class="h4" style="margin-bottom: 18px; border-bottom: 1px solid var(--bb-border); padding-bottom: 12px;">
-          অর্ডার বিবরণী
+          Order Summary
         </h2>
 
         <div id="checkout-items" style="margin-bottom: 20px; max-height: 280px; overflow-y: auto;">
@@ -180,22 +178,22 @@
         </div>
 
         <div style="display: flex; justify-content: space-between; margin-bottom: 10px; font-size: 14px;">
-          <span style="color: var(--bb-text-muted);">পণ্যের মূল্য (সাবটোটাল)</span>
-          <span style="font-family: var(--font-display); font-size: 16px; color: var(--bb-forest);" id="summary-subtotal">৳০</span>
+          <span style="color: var(--bb-text-muted);">Items Subtotal</span>
+          <span style="font-family: var(--font-display); font-size: 16px; color: var(--bb-forest);" id="summary-subtotal">৳0</span>
         </div>
 
         <div style="display: flex; justify-content: space-between; margin-bottom: 16px; font-size: 14px;">
-          <span style="color: var(--bb-text-muted);">ডেলিভারি চার্জ</span>
-          <span style="font-family: var(--font-display); font-size: 16px; color: var(--bb-forest);" id="summary-shipping">৳৭০</span>
+          <span style="color: var(--bb-text-muted);">Delivery Fee</span>
+          <span style="font-family: var(--font-display); font-size: 16px; color: var(--bb-forest);" id="summary-shipping">৳70</span>
         </div>
 
         <div style="border-top: 1px solid var(--bb-border); padding-top: 14px; display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 24px;">
-          <span style="font-family: var(--font-display); font-size: 18px; text-transform: uppercase; color: var(--bb-forest);">সর্বমোট</span>
-          <span style="font-family: var(--font-display); font-size: 26px; color: var(--bb-forest);" id="summary-total">৳০</span>
+          <span style="font-family: var(--font-display); font-size: 18px; text-transform: uppercase; color: var(--bb-forest);">Total Payable</span>
+          <span style="font-family: var(--font-display); font-size: 26px; color: var(--bb-forest);" id="summary-total">৳0</span>
         </div>
 
-        <div style="background: var(--bb-surface-muted); border-radius: var(--radius-sm); padding: 14px; font-family: var(--font-bn); font-size: 13px; color: var(--bb-text-muted); line-height: 1.5;">
-          🔒 ১০০% নিরাপদ চেকআউট ও পণ্য হাতে পেয়ে মূল্য পরিশোধের নিশ্চয়তা। প্রয়োজনে সরাসরি কল করুন: <a href="tel:01922379382" style="font-weight: 700; color: var(--bb-forest);">01922-379382</a>
+        <div style="background: var(--bb-surface-muted); border-radius: var(--radius-sm); padding: 14px; font-size: 13px; color: var(--bb-text-muted); line-height: 1.5;">
+          🔒 100% Secure Checkout &amp; Doorstep Cash on Delivery Guarantee. Need urgent assistance? Call us directly: <a href="tel:01922379382" style="font-weight: 700; color: var(--bb-forest);">01922-379382</a>
         </div>
       </div>
 
@@ -205,8 +203,8 @@
   <!-- Footer -->
   <footer class="bb-footer" style="padding-top: 40px; padding-bottom: 40px;">
     <div class="bb-container" style="text-align: center; font-size: 13px; color: #819488;">
-      <div>&copy; ২০২৬ বর্ণবাজার (Bornobazar). সর্বস্বত্ব সংরক্ষিত।</div>
-      <div style="margin-top: 4px;">বিএসটিআই লাইসেন্স নম্বর: BDS:CAC-260 &bull; মেহেরপুর, বাংলাদেশ।</div>
+      <div>&copy; 2026 Bornobazar. All rights reserved.</div>
+      <div style="margin-top: 4px;">BSTI License No: BDS:CAC-260 &bull; Dariapur, Mujibnagar, Meherpur, Bangladesh.</div>
     </div>
   </footer>
 
