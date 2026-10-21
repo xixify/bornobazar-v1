@@ -13,8 +13,117 @@
 
   const FREE_SHIPPING_THRESHOLD = 999;
 
+  const BORNOBAZAR_REELS = [
+    {
+      id: 'reel_1',
+      title: 'আচার কিনতে কোনটা দেখেন? খাঁটি রসুনের আচার',
+      shortTitle: 'রসুন আচার স্পেশাল',
+      videoSrc: 'videos/reel_1.mp4',
+      poster: 'videos/poster_1.jpg',
+      productId: 'BB-ACH-012',
+      productName: 'রসুন আচার (স্পেশাল টুইস্ট)',
+      productThumb: 'All images/761355190_1034052569236062_78667506752820005_n.jpg',
+      price: 240,
+      regularPrice: 280,
+      weight: '200 gm'
+    },
+    {
+      id: 'reel_2',
+      title: 'খাঁটি আচারের সুবাস ও স্বাদ — আলুবোখারা আচার',
+      shortTitle: 'আলুবোখারা আচার',
+      videoSrc: 'videos/reel_2.mp4',
+      poster: 'videos/poster_2.jpg',
+      productId: 'BB-ACH-002',
+      productName: 'আলুবোখারা আচার',
+      productThumb: 'All images/779787836_1049495257691793_4108399455579486072_n.jpg',
+      price: 240,
+      regularPrice: 280,
+      weight: '200 gm'
+    },
+    {
+      id: 'reel_3',
+      title: 'খাবারের টেবিলে ৩টি আচারের স্বাদ — নিউট্রি আচার কম্বো',
+      shortTitle: 'নিউট্রি আচার কম্বো',
+      videoSrc: 'videos/reel_3.mp4',
+      poster: 'videos/poster_3.jpg',
+      productId: 'BB-COM-006',
+      productName: 'নিউট্রি আচার কম্বো',
+      productThumb: 'All images/788601539_1056888763619109_5968941487902862885_n.jpg',
+      price: 890,
+      regularPrice: 1090,
+      weight: '800 gm'
+    },
+    {
+      id: 'reel_4',
+      title: 'আচারের আসল মশলা ও ঝাঁজ — খাঁটি তেঁতুল আচার',
+      shortTitle: 'তেঁতুল আচার প্রিমিয়াম',
+      videoSrc: 'videos/reel_4.mp4',
+      poster: 'videos/poster_4.jpg',
+      productId: 'BB-ACH-016',
+      productName: 'তেঁতুল আচার (প্রিমিয়াম জার)',
+      productThumb: 'All images/813976083_1073010388673613_8899924605867364727_n.jpg',
+      price: 380,
+      regularPrice: 420,
+      weight: '400 gm'
+    },
+    {
+      id: 'reel_5',
+      title: 'প্রতিদিন খাবারে আচারের তৃপ্তি — বরই আচার টক-মিষ্টি ক্রাশ',
+      shortTitle: 'বরই আচার ক্রাশ',
+      videoSrc: 'videos/reel_5.mp4',
+      poster: 'videos/poster_5.jpg',
+      productId: 'BB-ACH-018',
+      productName: 'বরই আচার (টক-মিষ্টি ক্রাশ)',
+      productThumb: 'All images/807386813_1076326418342010_1423256031986250910_n.jpg',
+      price: 380,
+      regularPrice: 420,
+      weight: '400 gm'
+    },
+    {
+      id: 'reel_6',
+      title: 'খাবারে যদি আচার না থাকে... রসুন কালোজিরা আচার',
+      shortTitle: 'রসুন কালোজিরা আচার',
+      videoSrc: 'videos/reel_6.mp4',
+      poster: 'videos/poster_6.jpg',
+      productId: 'BB-ACH-025',
+      productName: 'রসুন কালোজিরা প্রিমিয়াম জার',
+      productThumb: 'All images/778279709_1047741551200497_8987538511452370084_n.jpg',
+      price: 380,
+      regularPrice: 450,
+      weight: '400 gm'
+    },
+    {
+      id: 'reel_7',
+      title: 'ঘরোয়া আচারের আসল টেস্ট — তেঁতুল বরই মিক্স আচার',
+      shortTitle: 'তেঁতুল বরই মিক্স',
+      videoSrc: 'videos/reel_7.mp4',
+      poster: 'videos/poster_7.jpg',
+      productId: 'BB-ACH-008',
+      productName: 'তেঁতুল বরই মিক্স আচার',
+      productThumb: 'All images/772204431_1039984018642917_4214701317489319558_n.jpg',
+      price: 190,
+      regularPrice: 220,
+      weight: '200 gm'
+    },
+    {
+      id: 'reel_8',
+      title: 'বাজারের আচার বনাম খাঁটি বর্ণবাজার — ৬ প্যাক কম্বো গিফট বক্স',
+      shortTitle: '৬ প্যাক গিফট বক্স',
+      videoSrc: 'videos/reel_8.mp4',
+      poster: 'videos/poster_8.jpg',
+      productId: 'BB-COM-001',
+      productName: '৬ প্যাক আচার কম্বো গিফট বক্স',
+      productThumb: 'All images/724500930_995387276435925_6032589404291467890_n.jpg',
+      price: 1190,
+      regularPrice: 1260,
+      weight: '1.2 kg'
+    }
+  ];
+
   window.BornobazarMinimal = {
     products: window.BORNOBAZAR_PRODUCTS || [],
+    reels: BORNOBAZAR_REELS,
+    currentReelIndex: 0,
     cart: [],
     deliveryArea: 'inside_dhaka',
 
@@ -22,6 +131,7 @@
       this.loadCart();
       this.bindGlobalEvents();
       this.updateCartBadges();
+      this.initReelsModalEvents();
 
       // Page-specific initializers
       if (document.getElementById('home-featured-grid')) {
@@ -303,23 +413,207 @@
        ========================================================================== */
     initHomePage: function () {
       const container = document.getElementById('home-featured-grid');
-      if (!container) return;
+      if (container) {
+        const featured = this.products.slice(0, 8);
+        container.innerHTML = featured.map(p => this.renderProductCardHtml(p)).join('');
 
-      const featured = this.products.slice(0, 8);
-      container.innerHTML = featured.map(p => this.renderProductCardHtml(p)).join('');
-
-      // Filter tabs on homepage
-      const tabs = document.querySelectorAll('.bb-filter-pill');
-      tabs.forEach(tab => {
-        tab.addEventListener('click', (e) => {
-          tabs.forEach(t => t.classList.remove('active'));
-          tab.classList.add('active');
-          const cat = tab.getAttribute('data-cat');
-          const filtered = (cat === 'all')
-            ? this.products.slice(0, 8)
-            : this.products.filter(p => p.category === cat).slice(0, 8);
-          container.innerHTML = filtered.map(p => this.renderProductCardHtml(p)).join('');
+        // Filter tabs on homepage
+        const tabs = document.querySelectorAll('.bb-filter-pill');
+        tabs.forEach(tab => {
+          tab.addEventListener('click', () => {
+            tabs.forEach(t => t.classList.remove('active'));
+            tab.classList.add('active');
+            const cat = tab.getAttribute('data-cat');
+            const filtered = (cat === 'all')
+              ? this.products.slice(0, 8)
+              : this.products.filter(p => p.category === cat).slice(0, 8);
+            container.innerHTML = filtered.map(p => this.renderProductCardHtml(p)).join('');
+          });
         });
+      }
+
+      // Render Video Carousel
+      if (document.getElementById('home-reels-section')) {
+        this.renderReelsSection('home-reels-section');
+      }
+
+      // Hero slides animation if present
+      const slides = document.querySelectorAll('.bb-hero-slide');
+      const dots = document.querySelectorAll('.bb-hero-dot');
+      if (slides.length > 1) {
+        let currentSlide = 0;
+        setInterval(() => {
+          slides[currentSlide].classList.remove('active');
+          if (dots[currentSlide]) dots[currentSlide].classList.remove('active');
+          currentSlide = (currentSlide + 1) % slides.length;
+          slides[currentSlide].classList.add('active');
+          if (dots[currentSlide]) dots[currentSlide].classList.add('active');
+        }, 5000);
+      }
+    },
+
+    /* ==========================================================================
+       SHOPPABLE VIDEO REELS & MODAL
+       ========================================================================== */
+    renderReelsSection: function (containerId) {
+      const container = document.getElementById(containerId);
+      if (!container) return;
+      const carouselId = 'carousel-' + containerId;
+
+      const cardsHtml = this.reels.map((r, idx) => `
+        <div class="bb-reel-card" data-reel-idx="${idx}" onclick="if(!event.target.closest('.bb-reel-product-card')) BornobazarMinimal.openReelModal(${idx})">
+          <img class="bb-reel-poster" src="${r.poster}" alt="${escHtml(r.title)}" loading="lazy">
+          <div class="bb-reel-overlay"></div>
+          <div class="bb-reel-tag">
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+            <span>ভিডিও রিভিউ</span>
+          </div>
+          <button type="button" class="bb-reel-play-btn" aria-label="ভিডিও চালান" onclick="BornobazarMinimal.openReelModal(${idx}); event.stopPropagation();">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor">
+              <polygon points="8 5 19 12 8 19 8 5"/>
+            </svg>
+          </button>
+          <div class="bb-reel-product-card" onclick="event.stopPropagation()">
+            <div class="bb-reel-product-top">
+              <img class="bb-reel-product-thumb" src="${r.productThumb}" alt="${escHtml(r.productName)}" loading="lazy">
+              <div class="bb-reel-product-details">
+                <div class="bb-reel-product-title" title="${escHtml(r.productName)}">${escHtml(r.shortTitle || r.productName)}</div>
+                <div class="bb-reel-product-price">${fmtPrice(r.price)} ${r.regularPrice > r.price ? `<s style="font-size: 11px; color: var(--bb-text-light);">${fmtPrice(r.regularPrice)}</s>` : ''}</div>
+              </div>
+              <a href="product.html?id=${r.productId}" class="bb-reel-ext-btn" title="বিস্তারিত দেখুন">
+                <svg width="15" height="15" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/></svg>
+              </a>
+            </div>
+            <div class="bb-reel-btn-row">
+              <button type="button" class="bb-reel-add-cart-btn" onclick="BornobazarMinimal.addToCart('${r.productId}', '${r.weight}', 1)">
+                <svg width="14" height="14" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z"/></svg>
+                <span>কার্ট</span>
+              </button>
+            </div>
+          </div>
+        </div>
+      `).join('');
+
+      container.innerHTML = `
+        <div class="bb-container">
+          <div class="bb-reels-header">
+            <div>
+              <span class="bb-reels-badge">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polygon points="10 8 16 12 10 16 10 8" fill="currentColor"/></svg>
+                WATCH &amp; SHOP &bull; খাঁটি আচারের ভিডিও
+              </span>
+              <h2 class="h2 bb-reels-title">ভিডিওতে দেখুন আমাদের ঐতিহ্য ও কাস্টমার রিভিউ</h2>
+              <p class="bb-reels-subtitle">সরাসরি বয়াম খুলে স্বাদ ও উপাদানের খাঁটি অনুভূতি দেখে অর্ডার করুন</p>
+            </div>
+            <div style="display: flex; gap: 8px;">
+              <button type="button" class="bb-reels-nav-btn" onclick="document.getElementById('${carouselId}').scrollBy({left: -270, behavior: 'smooth'})" aria-label="পূর্ববর্তী">&larr;</button>
+              <button type="button" class="bb-reels-nav-btn" onclick="document.getElementById('${carouselId}').scrollBy({left: 270, behavior: 'smooth'})" aria-label="পরবর্তী">&rarr;</button>
+            </div>
+          </div>
+          <div class="bb-reels-carousel" id="${carouselId}">
+            ${cardsHtml}
+          </div>
+        </div>
+      `;
+    },
+
+    openReelModal: function (idx) {
+      if (idx < 0) idx = this.reels.length - 1;
+      if (idx >= this.reels.length) idx = 0;
+      this.currentReelIndex = idx;
+      const r = this.reels[idx];
+      if (!r) return;
+
+      const modal = document.getElementById('reel-modal');
+      const iframeWrap = document.getElementById('reel-iframe-container');
+      const drawer = document.getElementById('reel-modal-drawer');
+      if (!modal || !iframeWrap) return;
+
+      iframeWrap.innerHTML = `
+        <video id="reel-native-video" src="${r.videoSrc}" poster="${r.poster}" controls autoplay loop playsinline preload="auto" style="width:100%; height:100%; object-fit:cover; display:block; background:#000;">
+          <source src="${r.videoSrc}" type="video/mp4">
+        </video>
+      `;
+
+      const videoEl = document.getElementById('reel-native-video');
+      if (videoEl) {
+        const p = videoEl.play();
+        if (p !== undefined) {
+          p.catch(() => {
+            videoEl.muted = true;
+            videoEl.play();
+          });
+        }
+      }
+
+      if (drawer) {
+        drawer.innerHTML = `
+          <div class="bb-reel-modal-p-info">
+            <img src="${r.productThumb}" alt="${escHtml(r.productName)}" class="bb-reel-modal-p-img">
+            <div>
+              <div style="font-family: var(--font-bn); font-weight: 700; font-size: 14px; color: var(--bb-forest); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; max-width: 170px;">
+                ${escHtml(r.productName)}
+              </div>
+              <div style="font-family: var(--font-display); font-size: 15px; color: var(--bb-forest);">
+                ${fmtPrice(r.price)}
+              </div>
+            </div>
+          </div>
+          <div style="display: flex; gap: 8px;">
+            <button type="button" class="btn-pill btn-lime btn-sm" onclick="BornobazarMinimal.addToCart('${r.productId}', '${r.weight}', 1)">
+              অর্ডার করুন
+            </button>
+          </div>
+        `;
+      }
+
+      modal.classList.add('open');
+      document.body.style.overflow = 'hidden';
+    },
+
+    closeReelModal: function () {
+      const modal = document.getElementById('reel-modal');
+      const iframeWrap = document.getElementById('reel-iframe-container');
+      const videoEl = document.getElementById('reel-native-video');
+      if (videoEl) {
+        try {
+          videoEl.pause();
+          videoEl.removeAttribute('src');
+          videoEl.load();
+        } catch (e) {}
+      }
+      if (modal) modal.classList.remove('open');
+      if (iframeWrap) iframeWrap.innerHTML = '';
+      document.body.style.overflow = '';
+    },
+
+    initReelsModalEvents: function () {
+      const modal = document.getElementById('reel-modal');
+      if (!modal) return;
+      const closeBtn = document.getElementById('reel-modal-close');
+      const prevBtn = document.getElementById('reel-modal-prev');
+      const nextBtn = document.getElementById('reel-modal-next');
+
+      if (closeBtn) {
+        closeBtn.addEventListener('click', (e) => {
+          e.stopPropagation();
+          this.closeReelModal();
+        });
+      }
+      if (prevBtn) {
+        prevBtn.addEventListener('click', (e) => {
+          e.stopPropagation();
+          this.openReelModal(this.currentReelIndex - 1);
+        });
+      }
+      if (nextBtn) {
+        nextBtn.addEventListener('click', (e) => {
+          e.stopPropagation();
+          this.openReelModal(this.currentReelIndex + 1);
+        });
+      }
+      modal.addEventListener('click', (e) => {
+        if (e.target === modal) this.closeReelModal();
       });
     },
 

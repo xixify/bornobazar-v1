@@ -1717,3 +1717,641 @@ h4, .h4 { font-size: 1.15rem; }
     justify-content: center;
   }
 }
+
+/* ==========================================================================
+   INFINITE MARQUEE TICKER TAPE (FISHTOWN SIGNATURE)
+   ========================================================================== */
+.bb-marquee-bar {
+  background-color: var(--bb-forest);
+  color: #FFFFFF;
+  padding: 12px 0;
+  overflow: hidden;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  white-space: nowrap;
+  user-select: none;
+}
+
+.bb-marquee-track {
+  display: inline-flex;
+  gap: 32px;
+  animation: bb-marquee-anim 28s linear infinite;
+  will-change: transform;
+}
+
+.bb-marquee-bar:hover .bb-marquee-track {
+  animation-play-state: paused;
+}
+
+.bb-marquee-item {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  font-family: var(--font-display);
+  font-size: 14px;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: #FFFFFF;
+}
+
+.bb-marquee-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background-color: var(--bb-lime);
+  display: inline-block;
+}
+
+@keyframes bb-marquee-anim {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+/* ==========================================================================
+   CIRCULAR STORIES / HIGHLIGHTS STRIP ("GOOSEBUMPS" STYLE)
+   ========================================================================== */
+.bb-collections-strip {
+  padding: 36px 0 20px;
+  background: #FFFFFF;
+  border-bottom: 1px solid var(--bb-border);
+}
+
+.bb-collection-circles {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 28px;
+  overflow-x: auto;
+  padding-bottom: 10px;
+  scrollbar-width: none;
+  -webkit-overflow-scrolling: touch;
+}
+
+.bb-collection-circles::-webkit-scrollbar {
+  display: none;
+}
+
+.bb-circle-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  text-align: center;
+  flex-shrink: 0;
+  cursor: pointer;
+  group: hover;
+}
+
+.bb-circle-img-wrap {
+  width: 76px;
+  height: 76px;
+  border-radius: 50%;
+  padding: 3px;
+  background: #FFFFFF;
+  border: 2px solid var(--bb-forest);
+  position: relative;
+  transition: transform 0.25s ease, border-color 0.25s ease;
+}
+
+.bb-circle-item:hover .bb-circle-img-wrap {
+  transform: scale(1.06);
+  border-color: var(--bb-lime);
+}
+
+.bb-circle-img-wrap img {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  object-fit: cover;
+  display: block;
+}
+
+.bb-circle-video-badge {
+  border-color: var(--bb-forest) !important;
+}
+
+.bb-circle-play-badge {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  background: var(--bb-lime);
+  color: var(--bb-forest);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+}
+
+.bb-circle-label {
+  font-family: var(--font-bn);
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--bb-forest);
+  white-space: nowrap;
+}
+
+@media (max-width: 640px) {
+  .bb-collection-circles {
+    justify-content: flex-start;
+    padding-left: 16px;
+    padding-right: 16px;
+    gap: 18px;
+  }
+  .bb-circle-img-wrap {
+    width: 64px;
+    height: 64px;
+  }
+}
+
+/* ==========================================================================
+   SHOPPABLE VIDEO REELS CAROUSEL (WATCH & SHOP)
+   ========================================================================== */
+.bb-reels-section {
+  padding: 64px 0;
+  background-color: var(--bb-surface-muted);
+  border-top: 1px solid var(--bb-border);
+  border-bottom: 1px solid var(--bb-border);
+}
+
+.bb-reels-header {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  margin-bottom: 32px;
+  gap: 16px;
+}
+
+.bb-reels-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: var(--bb-lime-soft);
+  color: var(--bb-forest);
+  padding: 4px 12px;
+  border-radius: var(--radius-pill);
+  font-family: var(--font-display);
+  font-size: 12px;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  margin-bottom: 8px;
+}
+
+.bb-reels-title {
+  font-size: clamp(24px, 3.5vw, 36px);
+  line-height: 1.15;
+}
+
+.bb-reels-subtitle {
+  font-family: var(--font-bn);
+  font-size: 15px;
+  color: var(--bb-text-muted);
+  margin-top: 4px;
+}
+
+.bb-reels-nav-btn {
+  width: 44px;
+  height: 44px;
+  border-radius: var(--radius-pill);
+  background: #FFFFFF;
+  border: 1px solid var(--bb-border);
+  color: var(--bb-forest);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s ease;
+  box-shadow: var(--shadow-sm);
+}
+
+.bb-reels-nav-btn:hover {
+  background: var(--bb-forest);
+  color: #FFFFFF;
+  border-color: var(--bb-forest);
+}
+
+.bb-reels-carousel {
+  display: flex;
+  gap: 20px;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  padding-bottom: 16px;
+  scrollbar-width: none;
+  -webkit-overflow-scrolling: touch;
+}
+
+.bb-reels-carousel::-webkit-scrollbar {
+  display: none;
+}
+
+.bb-reel-card {
+  flex: 0 0 250px;
+  height: 420px;
+  border-radius: var(--radius-card);
+  overflow: hidden;
+  position: relative;
+  cursor: pointer;
+  scroll-snap-align: start;
+  border: 1px solid var(--bb-border);
+  background: #000000;
+  box-shadow: var(--shadow-sm);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.bb-reel-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-md);
+}
+
+.bb-reel-poster {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.bb-reel-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(0,0,0,0.3) 0%, rgba(0,0,0,0) 40%, rgba(0,0,0,0.85) 100%);
+  pointer-events: none;
+}
+
+.bb-reel-tag {
+  position: absolute;
+  top: 14px;
+  left: 14px;
+  background: rgba(13, 43, 29, 0.85);
+  backdrop-filter: blur(4px);
+  color: var(--bb-lime);
+  padding: 4px 10px;
+  border-radius: var(--radius-pill);
+  font-family: var(--font-display);
+  font-size: 11px;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+.bb-reel-play-btn {
+  position: absolute;
+  top: 42%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  background: var(--bb-lime);
+  color: var(--bb-forest);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.3);
+  transition: transform 0.2s ease, background 0.2s ease;
+}
+
+.bb-reel-card:hover .bb-reel-play-btn {
+  transform: translate(-50%, -50%) scale(1.12);
+  background: #FFFFFF;
+}
+
+.bb-reel-product-card {
+  position: absolute;
+  bottom: 12px;
+  left: 12px;
+  right: 12px;
+  background: #FFFFFF;
+  border-radius: var(--radius-md);
+  padding: 10px 12px;
+  box-shadow: var(--shadow-md);
+}
+
+.bb-reel-product-top {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 8px;
+}
+
+.bb-reel-product-thumb {
+  width: 40px;
+  height: 40px;
+  border-radius: var(--radius-sm);
+  object-fit: contain;
+  background: var(--bb-surface-muted);
+  border: 1px solid var(--bb-border);
+  flex-shrink: 0;
+}
+
+.bb-reel-product-details {
+  flex: 1;
+  min-width: 0;
+}
+
+.bb-reel-product-title {
+  font-family: var(--font-bn);
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--bb-forest);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.bb-reel-product-price {
+  font-family: var(--font-display);
+  font-size: 14px;
+  color: var(--bb-forest);
+}
+
+.bb-reel-ext-btn {
+  color: var(--bb-text-muted);
+  padding: 4px;
+  display: flex;
+  align-items: center;
+}
+
+.bb-reel-ext-btn:hover {
+  color: var(--bb-forest);
+}
+
+.bb-reel-btn-row {
+  display: flex;
+  gap: 6px;
+}
+
+.bb-reel-add-cart-btn {
+  flex: 1;
+  background: var(--bb-forest);
+  color: #FFFFFF;
+  padding: 7px 10px;
+  border-radius: var(--radius-pill);
+  font-family: var(--font-bn);
+  font-size: 12px;
+  font-weight: 700;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  transition: background 0.2s ease;
+}
+
+.bb-reel-add-cart-btn:hover {
+  background: var(--bb-lime);
+  color: var(--bb-forest);
+}
+
+/* ==========================================================================
+   VIDEO REEL MODAL (HIGH PERFORMANCE FULL-SCREEN PLAYER)
+   ========================================================================== */
+.bb-reel-modal-backdrop {
+  position: fixed;
+  inset: 0;
+  background-color: rgba(7, 25, 16, 0.88);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  z-index: 10000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease, visibility 0.3s ease;
+  padding: 20px;
+}
+
+.bb-reel-modal-backdrop.open {
+  opacity: 1;
+  visibility: visible;
+}
+
+.bb-reel-modal-dialog {
+  width: 100%;
+  max-width: 400px;
+  height: 90vh;
+  max-height: 720px;
+  background: #000000;
+  border-radius: var(--radius-card);
+  overflow: hidden;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 25px 60px rgba(0,0,0,0.5);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+.bb-reel-modal-close {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  background: rgba(0,0,0,0.6);
+  color: #FFFFFF;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 20;
+  cursor: pointer;
+  border: 1px solid rgba(255,255,255,0.2);
+}
+
+.bb-reel-modal-nav-prev,
+.bb-reel-modal-nav-next {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: rgba(0,0,0,0.6);
+  color: #FFFFFF;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 20;
+  border: 1px solid rgba(255,255,255,0.2);
+}
+
+.bb-reel-modal-nav-prev { left: 12px; }
+.bb-reel-modal-nav-next { right: 12px; }
+
+.bb-reel-modal-iframe-wrap {
+  flex: 1;
+  position: relative;
+  background: #000;
+}
+
+.bb-reel-modal-drawer {
+  padding: 14px 18px;
+  background: #FFFFFF;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  border-top: 1px solid var(--bb-border);
+}
+
+.bb-reel-modal-p-info {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  min-width: 0;
+}
+
+.bb-reel-modal-p-img {
+  width: 44px;
+  height: 44px;
+  border-radius: var(--radius-sm);
+  object-fit: contain;
+  background: var(--bb-surface-muted);
+  border: 1px solid var(--bb-border);
+}
+
+/* ==========================================================================
+   SIGNATURE COMBO SPOTLIGHT BENTO SECTION
+   ========================================================================== */
+.bb-combo-feature {
+  padding: 64px 0;
+  background: #FFFFFF;
+}
+
+.bb-combo-box {
+  background: var(--bb-surface-muted);
+  border: 1px solid var(--bb-border);
+  border-radius: var(--radius-card);
+  padding: 48px;
+  display: grid;
+  grid-template-columns: 1.2fr 1fr;
+  gap: 40px;
+  align-items: center;
+}
+
+.bb-combo-flock {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+  margin: 20px 0 28px;
+  font-family: var(--font-bn);
+  font-size: 14px;
+  color: var(--bb-forest);
+}
+
+.bb-combo-flock-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.bb-check-mark {
+  color: #16A34A;
+  font-weight: 700;
+}
+
+@media (max-width: 860px) {
+  .bb-combo-box {
+    grid-template-columns: 1fr;
+    padding: 28px;
+  }
+}
+
+/* ==========================================================================
+   DINING PAIRINGS & RECIPE SECTION ("ভাত হোক বা খিচুড়ি")
+   ========================================================================== */
+.bb-pairings-section {
+  padding: 64px 0;
+  background: var(--bb-canvas);
+}
+
+.bb-pairings-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 28px;
+}
+
+.bb-pairing-card {
+  background: #FFFFFF;
+  border: 1px solid var(--bb-border);
+  border-radius: var(--radius-card);
+  overflow: hidden;
+  box-shadow: var(--shadow-sm);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.bb-pairing-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-md);
+}
+
+.bb-pairing-media {
+  width: 100%;
+  aspect-ratio: 16/10;
+  object-fit: cover;
+  display: block;
+}
+
+.bb-pairing-content {
+  padding: 24px;
+}
+
+.bb-pairing-tag {
+  font-family: var(--font-display);
+  font-size: 11px;
+  text-transform: uppercase;
+  color: var(--bb-text-muted);
+  letter-spacing: 0.05em;
+  margin-bottom: 6px;
+}
+
+.bb-pairing-title {
+  font-family: var(--font-bn);
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--bb-forest);
+  margin-bottom: 8px;
+}
+
+.bb-pairing-desc {
+  font-family: var(--font-bn);
+  font-size: 14px;
+  color: var(--bb-text-muted);
+  line-height: 1.6;
+  margin-bottom: 16px;
+}
+
+.bb-pairing-link {
+  font-family: var(--font-bn);
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--bb-forest);
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  text-decoration: underline;
+}
+
+/* ==========================================================================
+   HOMEPAGE FAQ ACCORDION (MINIMALIST LUXURY)
+   ========================================================================== */
+.bb-faq-home-section {
+  padding: 64px 0;
+  background: var(--bb-surface-muted);
+  border-top: 1px solid var(--bb-border);
+}
+
+.bb-faq-home-grid {
+  display: grid;
+  grid-template-columns: 1fr 1.5fr;
+  gap: 48px;
+}
+
+@media (max-width: 860px) {
+  .bb-faq-home-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
